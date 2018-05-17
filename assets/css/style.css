@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+body{
+	background-color: #443344;
+	color: #ffffff;
+	font-family: 'Cinzel', serif; 
+	margin: 0 auto;
+}
+
+hr {
+	border: dotted 1px antiquewhite;
+}
+
+/*
+.timer-p {
+  margin-top: 40px;
+	font-size: 24px;
+}
+
+.timer {
+	font-size: 30px;
+}
+*/
+/*
+
+
+
+
+.answer:hover {
+  background: pink;
+}
+
+.answer {
+  padding-top: 7px;
+  height: 45px;
+  color: black;
+  padding-left: 14px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.img-wrong {
+  margin-top: 40px;
+}
+
+.first-answer {
+  margin-top: 40px;
+}
+
+.reset-button {
+  margin-top: 40px;
+}
+
+.summary-correct {
+  margin-top: 40px;
+}
+*/
