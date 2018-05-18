@@ -65,7 +65,9 @@
 //}
 //
 //function generateHTML() {
-//	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
+//	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p>
+//<p class='text-center'>" + questionArray[questionCounter] + "</p>
+//<p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
 //	$(".mainArea").html(gameHTML);
 //}
 //
@@ -113,10 +115,6 @@
 //var startScreen;
 //var gameHTML;
 //var counter = 30;
-//var questionArray = ["What is the capital of Australia?", "What is the capital of Liberia?", "What is the capital of Taiwan?", "What is the capital of Japan?", "What is the capital of China?", "What is the capital of Turkey?", "What is the capital of Colombia?", "What is the capital of India?"];
-//var answerArray = [["Canberra", "Melbourne", "Sydney", "Darwin"], ["Arthington","Monrovia","Tuzon","Marshall"], ["Tainan City", "Taichung", "Taipei", "Hsinchu"], ["Kyoto","Hiroshima","Tokyo","Osaka"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"]];
-//var imageArray = ["<img class='center-block img-right' src='img/australia.png'>", "<img class='center-block img-right' src='img/liberia.png'>", "<img class='center-block img-right' src='img/taiwan.png'>", "<img class='center-block img-right' src='img/japan.png'>", "<img class='center-block img-right' src='img/china.png'>", "<img class='center-block img-right' src='img/turkey.png'>", "<img class='center-block img-right' src='img/colombia.png'>", "<img class='center-block img-right' src='img/india.png'>"];
-//var correctAnswers = ["A. Canberra", "B. Monrovia", "C. Taipei", "C. Tokyo", "D. Beijing", "A. Ankara", "B. Bogota", "D. New Delhi"];
 //var questionCounter = 0;
 //var selecterAnswer;
 //var theClock;
@@ -125,16 +123,41 @@
 //var unansweredTally = 0;
 //var clickSound = new Audio("sound/button-click.mp3");
 //
-//var buttonclickSound = new Audio("sound/button-click.mp3");
+
+
+//game begin
+
+var questionsList = ["How did Daenerys Targaryen eventually hatch her dragon eggs?", "Which U.S. city was one of 8 international locations visited by the 2015 'Game of Thrones' Exhibition?", "The phrase 'Valar Morghulis' or 'all men must die' is usually responded with:", "American actor Peter Dinklage, who plays Tyrion Lannister, also had a starring role in this fantasy franchise:", "What is the only thing that can put out volatile Wildfire?"];
+var answersList = [[" In a lightning storm", " In a funeral pyre", "In a fireplace", "In a frozen cave"], ["Chicago","New York City","San Diego","Boston"], ["Valar Dohaeris or 'all men must serve'", "Valar Rohnas or 'all men must live'", "Valar GoGo or 'all men must dance'", "Valar GoGo or 'all men must cry'"], ["Lord of the Rings","Highlander","The Chronicles of Narnia","The Legend of Zelda"], ["Sand", "Water", "Dragon's blood", "Sunlight"]];
+var imagesList = [
+	"<img class='center-block img-right' src='https://media.fromthegrapevine.com/assets/images/2016/1/dragon-eggs-game-of-thrones.jpg.482x490_q71_crop-smart.jpg'>", 
+	"<img class='center-block img-right' src='https://media.fromthegrapevine.com/assets/images/2016/1/iron-throne.jpg.482x490_q71_crop-smart.jpg'>", 
+	"<img class='center-block img-right' src='https://media.fromthegrapevine.com/assets/images/2016/1/morghoulis.jpg.482x490_q71_crop-smart.jpg'>", 
+	"<img class='center-block img-right' src='https://media.fromthegrapevine.com/assets/images/2016/1/tyrion-lannister.jpg.482x490_q71_crop-smart.jpg'>", 
+	"<img class='center-block img-right' src='https://media.fromthegrapevine.com/assets/images/2016/1/wildfire-game-of-thrones.jpg.482x490_q71_crop-smart.jpg'>"];
+var correctAnswers = ["In a funeral pyre", "San Diego", "Valar Dohaeris or 'all men must serve'", "The Chronicles of Narnia", "Sand"];
+
+
+// need a counter for win or loose or clock done you duck situation
+var win = 0;
+var loose = 0;
+var youMissTheBus = 0;
+
+var questionCounter = 0;
+
+//need a sound when button clicked
+var buttonclickSound = new Audio("sound/button-click.mp3");
 
 //text - winter is coming...
-$(".mainArea").html("<h4 class='display-4'>Winter is coming...</h4>");
+$(".mainArea").html("Winter is coming...");
 
-//create a button
-var newButton = $("#mainArea").html("<button class='btn btn-outline-warning p-3 m-5'>Are you ready?</button>");
+//create a button at the begining
+var newTriviaButton = $('<button>');
+$(newTriviaButton).addClass("btn btn-outline-warning btn-lg btn-block p-2 m-2 newButton2").text("Are you ready for Trivia?");
+$("#mainArea").html(newTriviaButton);
 
 //when this button click, do some action
-$(newButton).on("click", function(event){
+$(".newButton2").on("click", function(event){
 				
 	event.preventDefault();
 	
@@ -147,33 +170,115 @@ $(newButton).on("click", function(event){
 				});
 
 //needs to move this page to next page where trivia start
+$("body").on("click", ".answer", function(){
+	buttonclickSound.play();
+	var selectedButtonAnswer = $(this).text();
+	if ( selectedButtonAnswer === correctAnswers[questionCounter]) {
+//		clearInterval(theClock);
+		generateWin();
+	}
+	
+	else {
+		clearInterval(theClock);
+		generateLoose();
+	}
+});
 
+//$("body").on("click", ".answer", function(event){
+//	//answeredQuestion = true;
+//	clickSound.play();
+//	selectedAnswer = $(this).text();
+//	if(selectedAnswer === correctAnswers[questionCounter]) {
+//		//alert("correct");
+//
+//		clearInterval(theClock);
+//		generateWin();
+//	}
+//	else {
+//		//alert("wrong answer!");
+//		clearInterval(theClock);
+//		generateLoss();
+//	}
+//}); // Close .answer click
 
 //let's create a new page once the button click
 //how about creating a page with a function, so when button click function run with that page
 
-function generateHTMLPage(){
-	var newHTMLPage = "<p class='text-center timer-p timer'>Time Remaining:"+timer+"</p>";
+function generateWin() {
+	win++;
+	//start new set of timer
+	var newHTMLPage = "<p class='text-left timer-p timer'>Time Remaining 00 : 00</p>";
 	$(".mainArea").html(newHTMLPage);
+	//current question
+	var questionPage = "<p class='text-center'>"+questionsList[questionCounter]+"</p><p>Correct! The answer is:</p>";
+	$("#mainQuestion").html(questionPage);
+	//current question's answer
+	var answerPage = "<p class='btn-lg btn-block btn-outline-light'>"+correctAnswers[questionCounter]+"</p>"
+	$("#mainArea").html(answerPage);
+	
+	//once this page is answered, trigger to next page via set time out
+	setTimeout(wait, 5000);
+}
+
+function generateLoose() {
+	loose++;
+	//start new set of timer
+	var newHTMLPage = "<p class='text-left timer-p timer'>Time Remaining 00 : 00</p>";
+	$(".mainArea").html(newHTMLPage);
+	//current question
+	var questionPage = "<p class='text-center'>"+questionsList[questionCounter]+"</p><p>Wrong! The correct answer is:</p>";
+	$("#mainQuestion").html(questionPage);
+	//current question's answer
+	var answerPage = "<p class='btn-lg btn-block btn-outline-light'>"+correctAnswers[questionCounter]+"</p>"
+	$("#mainArea").html(answerPage);
+	
+	//once this page is answered, trigger to next page via set time out
+	setTimeout(wait, 3000);
+}
+
+function generateLooseTimeOut() {
+	youMissTheBus++;
+	//start new set of timer
+	var newHTMLPage = "<p class='text-left timer-p timer'>Time Remaining 00 : 00</p>";
+	$(".mainArea").html(newHTMLPage);
+	//current question
+	var questionPage = "<p class='text-center'>"+questionsList[questionCounter]+"</p><p>You ran out of time! The correct answer is:</p>";
+	$("#mainQuestion").html(questionPage);
+	//current question's answer
+	var answerPage = "<p class='btn-lg btn-block btn-outline-light'>"+correctAnswers[questionCounter]+"</p>"
+	$("#mainArea").html(answerPage);
+	
+	//once this page is answered, trigger to next page via set time out
+	setTimeout(wait, 3000);
+}
+
+function generateHTMLPage(){
+	$('.hideTrigger').hide();
+	//start new set of timer
+	var newHTMLPage = "<p class='text-left timer-p timer'>Time Remaining 00 : "+timer+"</p>";
+	$(".mainArea").html(newHTMLPage);
+	//new question
+	var questionPage = "<p class='text-center'>"+questionsList[questionCounter]+"</p>";
+	$("#mainQuestion").html(questionPage);
+	//new answers related to that question 
+	//answerlist [first array select group of array] [second array select answer by sequence number]
+	var answerPage = "<p class='btn btn-lg btn-block btn-outline-light answer'>"+answersList[questionCounter][0]+"</p><p class='btn btn-lg btn-block btn-outline-light answer'>"+answersList[questionCounter][1]+"</p><p class='btn btn-lg btn-block btn-outline-light answer'>"+answersList[questionCounter][2]+"</p><p class='btn btn-lg btn-block btn-outline-light answer'>"+answersList[questionCounter][3]+"</p>";
+	$("#mainArea").html(answerPage);
 }
 
 // once you are in  a new page...
-// need a counter for win or loose or clock done you duck situation
-var win = 0;
-var loose = 0;
-var youMissTheBus = 0;
 
-var questionCounter = 0;
+
 
 //createing final screen function to show what's the score
 
 //createing screen changer once timer or right or wrong answer given which automatically start new timer and new question
 function wait() {
-	if (questionCounter < 4) {
-	questionCounter++;
-	generateHTMLPage();
-	timer = 15;
-	timeTracker();
+	if (questionCounter < 5) {
+		questionCounter++;
+		generateHTMLPage();
+		timer = 15;
+		timeTracker();
 	}
 	else {
 		finalScreen();
@@ -182,21 +287,21 @@ function wait() {
 
 //need some functin that call with timer
 function clockDoneYouDuck(){
-				youMissTheBus++;
-				gameHTML = "<p>The correct Answer was:</p>";
-				$("#mainArea").html(gameHTML);
+	youMissTheBus++;
+	gameHTML = "<p>The correct Answer was:</p>";
+	$("#mainArea").html(gameHTML);
 	alert(youMissTheBus);
 	wait();
 			} 
 
 
-// start a 15 seconds timer at a movement
+// start a 30 / 2 seconds timer at a movement
 var timer = 15;
 
 // create a function that actually trigger time
 
 function timeTracker() {
-	var theClock = setInterval(fifteenSeconds, 2000);
+	var theClock = setInterval(fifteenSeconds, 1000); // every two seconds is equal to one second
 	function fifteenSeconds() {
 		if (timer === 0) {
 			clearInterval(theClock);
@@ -205,7 +310,12 @@ function timeTracker() {
 		if (timer > 0) {
 			timer--;
 		}
-		$(".timer").html(timer);
+		
+		//want number in two digits to show up
+		var formattedNumber = ("0" + timer).slice(-2);
+		
+		//timer to start
+		$(".timer").html("<p class='text-left timer-p timer'>Time Remaining 00 : "+formattedNumber+"</p>");
 	}
 }
 
