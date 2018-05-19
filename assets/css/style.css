@@ -11,6 +11,18 @@ hr {
 	border: dotted 1px antiquewhite;
 }
 
+hr {
+width: 100%;
+height: 1px;
+margin-left: auto;
+margin-right: auto;
+background-color:#FF0066;
+color:#FF0066;
+border: 0 none;
+margin-top: 5px;
+margin-bottom:5px;
+}
+
 /*
 .timer-p {
   margin-top: 40px;
