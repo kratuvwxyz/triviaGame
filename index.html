@@ -1,69 +1,235 @@
 <!doctype html>
-<html lang="en">
-<head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--<meta http-equiv="refresh" content="10" />just for auto-refresh in dev-->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="#DESAIGNER" />
-<meta name="description" content="#"/> 
-<meta name="keywords" content="#"/>
-<link rel="shortcut icon" href="assets/images/favicon.ico" />
-<title>TRIVIA - Game Of Thrones</title>
-<!--===CSS===-->
-<!--Reset CSS-->
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-<!------->
-<!--BootStrap CSS-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-<!------->
-<!--Developer CSS-->
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<!------->
-<!--===JS===-->
-<!--jQuery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!------->
-<!--Developer JS-->
 
-<!------->
-</head>
-<!--===-->
-<body>
- 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<p class="p-4 hideTrigger"><img src="assets/images/GOTicon.svg" alt="Game of Thrones Icon" width="100%" /></p>
-			</div>
-			<div class="col-md-12 hideTrigger"><hr class="bg-info"></div>
-			<div class="col-md-4">
-				<p><h3 class="text-white-50 p-2">Trivia Quiz</h3></p>
-			</div>
-			<div class="col-md-8">
-				<p><h3 class="mainArea p-2 text-right"></h3></p>
-			</div>
-			<div class="col-md-12"><hr class="bg-info"></div>	
-	</div>
-    <div class="row"><h4 class="p-5" id="mainQuestion">How well do you know your 'Game of Thrones' trivia? Can you achieve the Iron Throne or are you destined to join the Night's Watch along the Wall?</h4><div class="col-md-12" id="mainArea"></div></div> 
-	
-	<div class="row p-5">&#160;</div>
-	<!-- /container -->
-	<!--    footer-->
-    
-    <footer>
-    <!--Copyright-->
-    <div class="footer-copyright text-center bg-danger text-capitalize text-white p-2 fixed-bottom">
+<!--
+
+        ╥ DESIGNED AND DEVELOPED BY...
+        ║ 
+        ║   /       ───
+        ║ ╓──╖ ╓───────╖ ╓╖ ╓───╖ ╓───╖ TM
+        ║ ║  ║ ║       ║ ╙╜ ║   ║ ║   ║  
+    ╓───╫─╫──╜ ╙──╖ ╓──╫──╖ ║   ║ ║   ║
+    ║   ║ ║       ║ ║  ║  ║ ║   ║ ║   ║
+    ║   ║ ╙───────╜ ╙──╜  ║ ╙───╫─╜   ║ 
+    ║   ║ SINCE 20ELEVEN  ║     ║     ╙ LLC © HTTPS://DESAIGN.APP 
+    ╙───╜                 ╙─────╜             ALL RIGHTS RESERVED
+  
+-->
+
+<html dir="ltr" lang="en-US">
+
+<!--=============================================-->
+<!--=============================================-->
+<!--=============================================-->
+
+<head>
+
+    <!--:::::::::::::::::::::::::::::::::::::::
+  Required meta tags
+::::::::::::::::::::::::::::::::::::::::-->
+
+    <meta charset="utf-8">
+    <!--just for auto-refresh or redirect use the following meta tag-->
+    <!--<meta http-equiv="refresh" content="10" />-->
+    <!--<meta http-equiv="refresh" content="0; url=http://website.com/" />-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="#DESAIGNER" />
+    <meta name="description" content="#" />
+    <meta name="keywords" content="#" />
+    <link rel="shortcut icon" type="image/gif" href="https://raw.githubusercontent.com/kratuvwxyz/assets2/master/images/favicon.gif" />
+
+    <!--:::::::::::::::::::::::::::::::::::::::
+  Stylesheets
+::::::::::::::::::::::::::::::::::::::::-->
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!--Reset CSS-->
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/kratuvwxyz/assets2/tree/master/css/reset.css">
+
+    <!--Other CSS-->
+
+    <!--W3.CSS-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--++++++-->
+    <!--BootStrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!--++++++-->
+
+    <!--Awesome Fonts Library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--++++++-->
+
+    <!--Developer CSS-->
+    <!--STYLE CSS-->
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('');
+            background-color: whitesmoke;
+            letter-spacing: 1px;
+        }
         
-        <a href="http://desaign.studio" class="text-capitalize text-white"> DESAIGN.STUDIO </a>© 2018 All rights reserved.
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'IBM Plex Serif', serif;
+        }
+        
+        footer {
+            background-image: url(https://raw.githubusercontent.com/kratuvwxyz/assets2/master/images/background/pattern/confectionary.png);
+            background-color: khaki;
+        }
+    </style>
+    <!--++++++-->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+    <!--:::::::::::::::::::::::::::::::::::::::
+  JavaScript
+::::::::::::::::::::::::::::::::::::::::-->
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--++++++-->
+
+
+
+    <!--:::::::::::::::::::::::::::::::::::::::
+  Document Title
+::::::::::::::::::::::::::::::::::::::::-->
+
+    <title>Trivia - GOT</title>
+
+</head>
+
+<!--=============================================-->
+<!--=============================================-->
+<!--=============================================-->
+
+<body>
+
+    <!--:::::::::::::::::::::::::::::::::::::::
+  Document Wrapper
+::::::::::::::::::::::::::::::::::::::::-->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 hideTrigger">
+                <div class="p-5">
+                    <a href="index.html">
+                        <img src="assets/images/GOTicon.svg" alt="GOT Icon" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-12 hideTrigger">
+                <hr class="bg-info">
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-white-50 textCinzel text-center pt-3 ml-3">Trivia Quiz</h3>
+            </div>
+            <div class="col-md-8">
+                <h3 class="pt-3 mr-3 mainArea text-center textCinzel"></h3>
+            </div>
+            <div class="col-md-12">
+                <hr class="bg-info">
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="p-5 text-center" id="mainQuestion">How well do you know your 'Game of Thrones' trivia? Can you achieve the Iron Throne or are you destined to join the Night's Watch along the Wall?</h4>
+            <div class="col-md-12" id="mainArea"></div>
+        </div>
+        <!-- <div class="row p-5">&#160;</div> -->
     </div>
-    <!--/.Copyright-->    
-    </footer>	
-<!--BootStrap JavaScript-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-<!------->
-<script type="text/javascript" src="assets/js/main.js"></script>
+
+    <!--:::::::::::::::::::::::::::::::::::::::
+  Footer
+::::::::::::::::::::::::::::::::::::::::-->
+    <br><br><br><br><br><br><br><br><br>
+
+    <section id="footerSection">
+
+        <footer class="w3-container w3-bottom w3-topbar w3-border-dark-gray w3-khaki" id="footerCopyright">
+
+            <!--links-->
+            <div id="footerLinks" class="w3-padding-16">
+                <a href="#" target="_blank"><i class="fa fa-github w3-btn" style="font-size:25px;color: #bd2c00;"></i></a> |
+                <a href="#" target="_blank"><i class="fa fa-linkedin-square w3-btn" style="font-size:25px;color: #0077b5;"></i></a> |
+                <a href="index.html" class="w3-text-dark-gray w3-btn">#TriviaGOT</a>
+                <hr>
+            </div>
+
+            <!--logo-->
+            <div id="logoCopyright" class="w3-row w3-display-container w3-padding-24">
+
+                <img src="https://kratuvwxyz.github.io/assets/images/footer/DESAIGNLLC.svg" alt="desaign llc" height="60" border="none" style="padding-bottom: 5px;" />
+
+                <span class="w3-display-bottom" style="white-space: nowrap; font-size: 12px; line-height: 20px; letter-spacing: 1px; color: #34495e; vertical-align: bottom;">&#160;&copy; 2011-<script type="text/javascript">var d = new Date();document.write(d.getFullYear());</script> <a href="http://desaign.studio" style="color:#e74c3c; text-decoration: underline; vertical-align: bottom;" target="_blank" >DESAIGN.STUDIO</a> All Rights Reseverd.</span>
+
+                <!--plog number-->
+                <div id="plog" class="w3-bottom w3-khaki" style="z-index: 99999"><span class="w3-display-bottomright w3-padding-small w3-margin-right w3-opacity" style="font-size: 10px;">18324C04AA</span></div>
+
+            </div>
+
+        </footer>
+
+        <script type="text/javascript">
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("footerCopyright").style.bottom = "-140px";
+                } else {
+                    document.getElementById("footerCopyright").style.bottom = "0px";
+                }
+            }
+
+            $(".w3-btn").hover(function() {
+                $(this).css("box-shadow", "none");
+            });
+        </script>
+
+    </section>
+
+
+    <!--:::::::::::::::::::::::::::::::::::::::
+External JavaScripts
+::::::::::::::::::::::::::::::::::::::::-->
+
+    <!-- Developer JavaScript -->
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <script type="text/javascript">
+    </script>
+
 </body>
+
+<!--==========================================================-->
+<!--==========================================================-->
+<!--=============================================================
+
+	╥ DESIGNED AND DEVELOPED BY...
+	║ 
+	║   /       ───
+	║ ╓──╖ ╓───────╖ ╓╖ ╓───╖ ╓───╖ TM
+	║ ║  ║ ║       ║ ╙╜ ║   ║ ║   ║  
+╓───╫─╫──╜ ╙──╖ ╓──╫──╖ ║   ║ ║   ║
+║   ║ ║       ║ ║  ║  ║ ║   ║ ║   ║
+║   ║ ╙───────╜ ╙──╜  ║ ╙───╫─╜   ║ 
+║   ║ SINCE 20ELEVEN  ║     ║     ╙ LLC © HTTPS://DESAIGN.APP 
+╙───╜                 ╙─────╜             ALL RIGHTS RESERVED
+
+==============================================================-->
+<!--==========================================================-->
+<!--==========================================================-->
+
+</html>
+</body>
+
 </html>
