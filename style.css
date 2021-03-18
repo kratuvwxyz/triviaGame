@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
+
+* {
+  letter-spacing: 2px;
+}
+
+body {
+  background-color: #443344;
+  color: #ffffff;
+  margin: 0 auto;
+}
+
+.textCinzel {
+  font-family: "Cinzel", serif;
+}

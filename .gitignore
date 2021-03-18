@@ -12,4 +12,6 @@ Dockerfile
 docker-compose.yml
 
 #Test
-0HN0
+0HN0/
+# find . -type f -name '._*' -delete
+# git rm -r --cached .

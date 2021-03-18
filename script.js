@@ -137,7 +137,7 @@ $(document).ready(function() {
 
     //create a button at the begining
     var newTriviaButton = $('<button>');
-    $(newTriviaButton).addClass("btn btn-outline-warning btn-lg btn-block p-2 m-2 newButton2").text("Are you ready for Trivia?"); //added newButton2
+    $(newTriviaButton).addClass("btn btn-outline-warning btn-lg btn-block p-2 m-2 newButton2 m-auto").text("Are you ready?"); //added newButton2
     $("#mainArea").html(newTriviaButton);
 
     $(".newButton2").on("click", function(event) {
@@ -187,7 +187,7 @@ function generateHTMLPage() {
     $("#mainQuestion").html(questionPage);
     //new answers related to that question 
     //answerlist [first array select group of array] [second array select answer by sequence number]
-    var answerPage = "<p class='btn btn-lg btn-block btn-outline-light answer'>" + answersList[questionCounter][0] + "</p><p class='btn btn-lg btn-block btn-outline-light answer'>" + answersList[questionCounter][1] + "</p><p class='btn btn-lg btn-block btn-outline-light answer'>" + answersList[questionCounter][2] + "</p><p class='btn btn-lg btn-block btn-outline-light answer'>" + answersList[questionCounter][3] + "</p>";
+    var answerPage = "<p class='btn btn-lg btn-outline-light answer'>" + answersList[questionCounter][0] + "</p><p class='btn btn-lg btn-outline-light answer'>" + answersList[questionCounter][1] + "</p><p class='btn btn-lg btn-outline-light answer'>" + answersList[questionCounter][2] + "</p><p class='btn btn-lg btn-outline-light answer'>" + answersList[questionCounter][3] + "</p>";
     $("#mainArea").html(answerPage);
 }
 
