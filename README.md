@@ -1,4 +1,4 @@
-# triviaGame
+# Trivia Game
 
 How well do you know your 'Game of Thrones' trivia? Can you achieve the Iron Throne or are you destined to join the Night's Watch along the Wall?
 
