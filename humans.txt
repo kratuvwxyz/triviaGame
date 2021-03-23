@@ -22,22 +22,31 @@
                             
 /* SITE */
 
-    Version: 2103181717
+Version:
 
-                            
-    Last update: 21/03/18
+    - 2103181717
+    ✔ Last Update @done (March 23rd 2021, 15:11)
 
-                                
-    Standards: HTML5, CSS3, JavaScript
+Framework:
 
-                                
-    Components: JQuery, Bootstrap, 
+    - HTML5, CSS3, JavaScript
 
-                                
-    Software: Visual Studio Code Editor
+Built With:
 
+    - JQuery, Bootstrap, Google Fonts, SVG
 
-    Version Control: GitHub
+Software:
+
+    - Visual Studio Code Editor
+    - Github for versioning
+
+Contributors:
+
+    - COC : https://github.com/kratuvwxyz/CONTRIBUTE
+
+License:
+
+    - MIT License : https://github.com/kratuvwxyz/LICENSE
 
 
 /* POWERED BY */

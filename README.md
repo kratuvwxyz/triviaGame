@@ -1,10 +1,10 @@
-# Trivia Game
+# Game of Trivia by Desaign Studio
 
 How well do you know your 'Game of Thrones' trivia? Can you achieve the Iron Throne or are you destined to join the Night's Watch along the Wall?
 
-#### Time based application.
+#### Time based application
 
-### How to play?
+<img src="./SS1.png" alt="Screen Shot" width="500">
 
 - It has 5 questions.
 - Time starts once you click start button or new question generate.
@@ -19,21 +19,28 @@ How well do you know your 'Game of Thrones' trivia? Can you achieve the Iron Thr
 ### Version
 
 - **2103181717**
-- Last Update: 21/03/18
+✔ Last Update @done (March 23rd 2021, 15:05)
 
-### Standards
+### Framework
 
 - HTML5, CSS3, JavaScript
 
-### Components
+### Built With
 
-- JQuery, Bootstrap
+- JQuery, Bootstrap, Google Fonts, SVG
 
 ### Software
 
 - Visual Studio Code Editor
 - Github for versioning
 
+### CONTRIBUTE
+
+- A [contributing guideline](https://github.com/kratuvwxyz/CONTRIBUTE) available.
+
+### LICENSE
+
+- [MIT](https://github.com/kratuvwxyz/LICENSE) © 2021 Kratu Desai, DESAIGN LLC.
 
 ## CONTACT
 
